@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.ListFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".views.MainActivity">
+
+        <TextView
+            android:id="@+id/topBg"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:background="@color/blue"
+            android:fontFamily="@font/bungee"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="@string/your_inventory"
+            android:textColor="@color/dark_grey"
+            android:textSize="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/topBg2"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:background="@color/grey"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center_vertical"
+            android:paddingStart="10dp"
+            android:text="Filters:"
+            android:textColor="@color/dark_grey"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topBg" />
+
+        <TextView
+            android:id="@+id/filter1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="3dp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:text="@string/price"
+            android:textColor="@color/dark_grey"
+            android:textSize="22dp"
+            app:layout_constraintBottom_toBottomOf="@+id/topBg2"
+            app:layout_constraintStart_toStartOf="@+id/topBg2"
+            app:layout_constraintTop_toBottomOf="@+id/topBg"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/filter2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:text="Availabile"
+            android:textColor="@color/dark_grey"
+            android:textSize="22dp"
+            app:layout_constraintEnd_toEndOf="@+id/topBg2"
+            app:layout_constraintHorizontal_bias="0.41"
+            app:layout_constraintStart_toEndOf="@+id/filter1"
+            app:layout_constraintTop_toBottomOf="@+id/topBg" />
+
+        <ImageView
+            android:id="@+id/arrowUp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="32dp"
+            android:background="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/topBg2"
+            app:layout_constraintStart_toStartOf="@+id/filter1"
+            app:layout_constraintTop_toBottomOf="@+id/filter1"
+            app:srcCompat="@drawable/ic_arrow_upward" />
+
+        <ImageView
+            android:id="@+id/arrowDown"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="32dp"
+            android:background="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/topBg2"
+            app:layout_constraintEnd_toEndOf="@+id/filter1"
+            app:layout_constraintTop_toBottomOf="@+id/filter1"
+            app:srcCompat="@drawable/ic_baseline_arrow_downward_24" />
+
+        <TextView
+            android:id="@+id/online"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="56dp"
+            android:layout_marginTop="5dp"
+            android:background="#FFFFFF"
+            android:fontFamily="sans-serif-medium"
+            android:padding="2dp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:text="online"
+            android:textColor="@color/dark_grey"
+            app:layout_constraintStart_toEndOf="@+id/arrowUp"
+            app:layout_constraintTop_toBottomOf="@+id/filter2" />
+
+        <TextView
+            android:id="@+id/offline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="#FFFFFF"
+            android:fontFamily="sans-serif-medium"
+            android:padding="2dp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:text="offline"
+            android:textColor="@color/dark_grey"
+            app:layout_constraintStart_toEndOf="@+id/online"
+            app:layout_constraintTop_toTopOf="@+id/online" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            android:background="@color/blue"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topBg2"
+            tools:listitem="@layout/item_list" />
+
+        <TextView
+            android:id="@+id/reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:background="#FFFFFF"
+            android:fontFamily="sans-serif-medium"
+            android:padding="2dp"
+            android:text="Reset"
+            app:layout_constraintBottom_toBottomOf="@+id/offline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/filter2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>

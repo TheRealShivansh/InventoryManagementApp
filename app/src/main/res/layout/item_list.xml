@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="dataModel"
+            type="com.example.inventorymanagementapp.model.DataModel" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/delete"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/cardView"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:srcCompat="@drawable/ic_baseline_delete_24" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="0dp"
+        android:layout_height="180dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:elevation="@dimen/cardview_default_elevation"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/productName"
+            android:layout_width="180dp"
+            android:layout_height="40dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:paddingStart="15dp"
+            android:paddingTop="15dp"
+            android:text="@={dataModel.itemName}" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:paddingStart="18dp"
+            android:text="@={dataModel.itemPrice}"
+            android:textColor="@color/teal_700"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/availability"
+            android:layout_width="180dp"
+            android:layout_height="30dp"
+            android:layout_gravity="bottom"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:paddingStart="18dp"
+            android:text="@={dataModel.itemAvailability}"
+            android:layout_marginBottom="40dp"
+            android:textColor="@color/black"
+            android:textSize="16dp" />
+
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="120dp"
+            android:layout_gravity="right"
+            android:loadImage="@{dataModel.itemImage}"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:id="@+id/details"
+            android:layout_width="180dp"
+            android:layout_height="50dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@{dataModel.itemDescription}"
+            android:layout_gravity="bottom|right"/>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
